@@ -99,51 +99,66 @@
         app:layout_constraintStart_toEndOf="@+id/start_year_et"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/gdp"
-        android:layout_width="336dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="64dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_year_et" />
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/inflow"
-        android:layout_width="336dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="12dp"
-        android:visibility="invisible"
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="373dp"
+        android:layout_height="413dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gdp" />
+        app:layout_constraintTop_toBottomOf="@+id/apply_btn">
 
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/outflow"
-        android:layout_width="336dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="20dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.405"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inflow" />
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/gdp"
+                    android:layout_width="336dp"
+                    android:layout_height="125dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/inflow"
+                    android:layout_width="336dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+
+                <com.jjoe64.graphview.GraphView
+                    android:id="@+id/outflow"
+                    android:layout_width="336dp"
+                    android:layout_height="125dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    />
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/annotations_btn"
         android:layout_width="218dp"
         android:layout_height="54dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_corner_view"
         android:text="@string/annotations"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outflow" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
 
     <Button
         android:id="@+id/apply_btn"
@@ -158,7 +173,7 @@
 
     <ImageView
         android:id="@+id/macroeconomics_table_image"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_width="59dp"
         android:layout_height="54dp"
         android:layout_marginStart="72dp"
@@ -173,7 +188,7 @@
     <ImageView
         android:id="@+id/agriculture_table_image"
         android:layout_width="59dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_height="54dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -186,7 +201,7 @@
     <ImageView
         android:id="@+id/debt_table_image"
         android:layout_width="62dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

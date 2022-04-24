@@ -26,6 +26,7 @@ public class ShowActvity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_actvity);
         TextView selectedCountry_tv=findViewById(R.id.country_name);
+        TextView title_table=findViewById(R.id.title_table);
         Button show_btn=findViewById(R.id.show_btn);
         ImageView macroeconomics_table_image=findViewById(R.id.macroeconomics_table_image);
         ImageView agriculture_table_image=findViewById(R.id.agriculture_table_image);
@@ -45,6 +46,7 @@ public class ShowActvity extends AppCompatActivity {
         if(selectedTable==0){
             show_btn.setBackgroundColor(getResources().getColor(R.color.Blue_color));;
             macroeconomics_table_image.setBackgroundColor(getResources().getColor(R.color.Blue_color));
+            title_table.setText(R.string.Macroeoconomic_usd);
         }
         else if(selectedTable==1){
             show_btn.setBackgroundColor(getResources().getColor(R.color.Green_color));;
@@ -53,6 +55,7 @@ public class ShowActvity extends AppCompatActivity {
             checkBox_2.setText(R.string.Credit);
             checkBox_3.setText(R.string.Fertilizers);
             checkBox_4.setText(R.string.Fertilizer_Production);
+            title_table.setText(R.string.agricultural_Table);
         }
         else{
             show_btn.setBackgroundColor(getResources().getColor(R.color.Brown_color));;
@@ -61,6 +64,7 @@ public class ShowActvity extends AppCompatActivity {
             checkBox_2.setText(R.string.GNI);
             checkBox_3.setText(R.string.Total_Debt);
             checkBox_4.setText(R.string.GNI_Current);
+            title_table.setText(R.string.debt_Table);
         }
         show_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,5 +97,6 @@ public class ShowActvity extends AppCompatActivity {
         intent.putExtra("selectedTable",selectedTable);
         intent.putExtra("checkedStrings",checkedStrings);
         startActivity(intent);
+        finish();
     }
 }

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -38,6 +39,9 @@ public class AnnotationsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_annotations);
         Button annotations_btn=findViewById(R.id.annotations_btn);
         TextView selectedCountry_tv=findViewById(R.id.country_name);
+        Button apply_btn=findViewById(R.id.apply_btn);
+        EditText end_year_et=findViewById(R.id.end_year_et);
+        EditText start_year_et=findViewById(R.id.start_year_et);
         Intent intent = getIntent();
         selectedCountry=intent.getStringExtra("selectedCountry");
         selectedUser=intent.getIntExtra("selectedUser",0);
@@ -82,8 +86,30 @@ public class AnnotationsActivity extends AppCompatActivity {
             annotations_btn.setBackgroundColor(getResources().getColor(R.color.Brown_color));;
             debt_table_image.setBackgroundColor(getResources().getColor(R.color.Brown_color));
         }
+        apply_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(start_year_et.getText().toString().isEmpty() && !end_year_et.getText().toString().isEmpty()){
+                    Log.e("StartYearEndYear",start_year_et.getText().toString()+ " "+end_year_et.getText().toString());
+                }
+            }
+        });
+        annotations_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openNotesActivity();
+            }
+        });
     }
-
+    private  void openNotesActivity(){
+        Intent intent = new Intent(this,NotesAnnotations.class);
+        intent.putExtra("selectedCountry",selectedCountry);
+        intent.putExtra("selectedUser",selectedUser);
+        intent.putExtra("selectedTable",selectedTable);
+        intent.putExtra("checkedStrings",checkedStrings.toString());
+        startActivity(intent);
+        finish();
+    }
 
     public void readCsvgdpusd(String selectedCountry) {
         InputStream is = getResources().openRawResource(R.raw.gdpusd2);

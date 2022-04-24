@@ -56,12 +56,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         macroeconomics_table_image.setOnClickListener(this);
         agriculture_table_image.setOnClickListener(this);
         debt_table_image.setOnClickListener(this);
-        government_official_image.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 
     @Override
@@ -90,10 +84,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
     private  void openShowActivity(){
-        Intent intent = new Intent(this,ShowActvity.class);
-        intent.putExtra("selectedCountry",selectedCountry);
-        intent.putExtra("selectedUser",selectedUser);
-        intent.putExtra("selectedTable",selectedTable);
+        Intent intent;
+        if(selectedUser==0){
+            intent = new Intent(this, ShowActvity.class);
+            intent.putExtra("selectedCountry",selectedCountry);
+            intent.putExtra("selectedUser",selectedUser);
+            intent.putExtra("selectedTable",selectedTable);
+        }
+        else{
+            intent = new Intent(this, GovernmentOfficialNotes.class);
+        }
         startActivity(intent);
+
     }
 }

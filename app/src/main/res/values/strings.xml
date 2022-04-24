@@ -6,6 +6,8 @@
     <string name="macroeconomics_Resarcher">Macroeconomic Researcher</string>
     <string name="government_0fficial">Government Official</string>
     <string name="Macroeoconomic_usd">Macroeoconomic (USD)</string>
+    <string name="agricultural_Table">Agricultural Table</string>
+    <string name="debt_Table">Debt Table</string>
     <string name="gdp">GDP (USD)</string>
     <string name="fdi_inflow">FDI Inflows(USD)</string>
     <string name="fdi_outflow">FDI Outflows(USD)</string>
@@ -24,4 +26,5 @@
     <string name="GNI_Current">GNI (current US$)</string>
     <string name="annotations">Annotations</string>
     <string name="apply">Apply</string>
+    <string name="no_notes_taken">No Notes Added.</string>
 </resources>
