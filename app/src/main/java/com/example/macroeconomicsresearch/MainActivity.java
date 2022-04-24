@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.government_official_image:
                 selectedUser=1;
+                openShowActivity();
                 break;
             case R.id.macroeconomics_table_image:
                 selectedTable=0;
