@@ -99,31 +99,66 @@
         app:layout_constraintStart_toEndOf="@+id/start_year_et"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <ImageView
-        android:id="@+id/graph_ImageView"
-        android:layout_width="372dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="60dp"
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/gdp"
+        android:layout_width="336dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="64dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.589"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/start_year_et"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/start_year_et" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/inflow"
+        android:layout_width="336dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="12dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gdp" />
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/outflow"
+        android:layout_width="336dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.405"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inflow" />
 
     <Button
         android:id="@+id/annotations_btn"
         android:layout_width="218dp"
         android:layout_height="54dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/rounded_corner_view"
         android:text="@string/annotations"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/graph_ImageView" />
+        app:layout_constraintTop_toBottomOf="@+id/outflow" />
+
+    <Button
+        android:id="@+id/apply_btn"
+        android:layout_width="97dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/rounded_corner_view"
+        android:text="@string/apply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_year_et" />
 
     <ImageView
         android:id="@+id/macroeconomics_table_image"
+        android:visibility="invisible"
         android:layout_width="59dp"
         android:layout_height="54dp"
         android:layout_marginStart="72dp"
@@ -132,12 +167,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/annotations_btn"
-        app:layout_constraintVertical_bias="0.562"
+        app:layout_constraintVertical_bias="0.1"
         app:srcCompat="@drawable/ic_baseline_analytics_24" />
 
     <ImageView
         android:id="@+id/agriculture_table_image"
         android:layout_width="59dp"
+        android:visibility="invisible"
         android:layout_height="54dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
@@ -150,6 +186,7 @@
     <ImageView
         android:id="@+id/debt_table_image"
         android:layout_width="62dp"
+        android:visibility="invisible"
         android:layout_height="61dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,16 +195,4 @@
         app:layout_constraintTop_toTopOf="@+id/agriculture_table_image"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_monetization_on_24" />
-
-    <Button
-        android:id="@+id/apply_btn"
-        android:layout_width="97dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="18dp"
-        android:layout_marginRight="18dp"
-        android:background="@drawable/rounded_corner_view"
-        android:text="@string/apply"
-        app:layout_constraintBottom_toTopOf="@+id/graph_ImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/end_year_et" />
 </androidx.constraintlayout.widget.ConstraintLayout>

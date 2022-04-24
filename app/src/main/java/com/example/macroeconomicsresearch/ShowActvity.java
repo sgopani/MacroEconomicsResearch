@@ -30,15 +30,18 @@ public class ShowActvity extends AppCompatActivity {
         ImageView macroeconomics_table_image=findViewById(R.id.macroeconomics_table_image);
         ImageView agriculture_table_image=findViewById(R.id.agriculture_table_image);
         ImageView debt_table_image=findViewById(R.id.debt_table_image);
+
         checkBox_1=findViewById(R.id.checkBox_1);
         checkBox_2=findViewById(R.id.checkBox_2);
         checkBox_3=findViewById(R.id.checkBox_3);
         checkBox_4=findViewById(R.id.checkBox_4);
+
         Intent intent = getIntent();
         selectedCountry=intent.getStringExtra("selectedCountry");
         selectedUser=intent.getIntExtra("selectedUser",0);
         selectedTable=intent.getIntExtra("selectedTable",0);
         selectedCountry_tv.setText(selectedCountry);
+
         if(selectedTable==0){
             show_btn.setBackgroundColor(getResources().getColor(R.color.Blue_color));;
             macroeconomics_table_image.setBackgroundColor(getResources().getColor(R.color.Blue_color));

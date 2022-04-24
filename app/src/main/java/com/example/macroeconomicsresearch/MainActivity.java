@@ -13,9 +13,11 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private String selectedCountry;
     private int selectedUser;
     private int selectedTable;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,15 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         spinner.setSelection(2);
         selectedCountry="USA";
         selectedUser=0;
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                      selectedCountry=parent.getItemAtPosition(position).toString();
             }
+
             @Override
             public void onNothingSelected(AdapterView <?> parent) {
             }
+
         });
+
         macroeconomics_researcher_image.setOnClickListener(this);
         government_official_image.setOnClickListener(this);
         macroeconomics_table_image.setOnClickListener(this);

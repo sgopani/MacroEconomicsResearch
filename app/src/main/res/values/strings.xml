@@ -8,6 +8,8 @@
     <string name="Macroeoconomic_usd">Macroeoconomic (USD)</string>
     <string name="gdp">GDP (USD)</string>
     <string name="fdi_inflow">FDI Inflows(USD)</string>
+    <string name="fdi_outflow">FDI Outflows(USD)</string>
+    <string name="import_export">Import / Export</string>
     <string name="show">Show</string>
     <string name="macroeconomic">Macroeconomic</string>
     <string name="start_value">Start Value :</string>
